@@ -11,7 +11,7 @@ void setup() {
   sim = builder(5, 3, 1)
     .rule(new RuleStep() {
       public float f(float x, float y, PhaseField field) {
-        return 
+        return x;
       }
     }, 0.5)
     .sinWeight(0.25)
