@@ -6,7 +6,7 @@ public PathicleBuilder builder(float radius, float n, float speed) {
   step.field.w = ((float)width) / n;
   step.field.h = ((float)height) / n;
   step.field.speed = speed;
-
+  step.sim.weight = new Neutral();
   return step;
 }
 
@@ -16,6 +16,16 @@ public class PathicleBuilder {
   
   public PathicleBuilder() {
     sim.field = field;
+  }
+  
+  public PathicleBuilder useColor(color a) {
+    return useColor(a, a);
+  }
+  
+  public PathicleBuilder useColor(color a, color b) {
+    sim.lowColor = a;
+    sim.highColor = b;
+    return this;
   }
   
   public PathicleBuilder widthRule(float freq) {

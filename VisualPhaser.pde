@@ -11,10 +11,10 @@ void setup() {
   sim = builder(5, 3, 1)
     .rule(new RuleStep() {
       public float f(float x, float y, PhaseField field) {
-        return x - field.dc(x,y);
+        return (0.5 - smoothstep(sin(x / field.pixelW*2*PI), -1, 1)) - sin(y/field.pixelH*2*PI);
       }
-    }, 0.4)
-    .sinWeight(0.25)
+    }, 1)
+    //.sinWeight(0.25)
     .build();
 }
 
@@ -27,7 +27,7 @@ void draw() {
     fx.render()
     .bloom(0.7, 20, 50)
     .compose();
-  //saveFrame("shockwave/####.tiff");
+  //saveFrame("twinsies/####.tiff");
 }
 
   
