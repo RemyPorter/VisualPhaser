@@ -8,3 +8,5 @@ Sample videos:
 * [Loop Warp](https://vimeo.com/408911101)
 * [Gravity Waves](https://vimeo.com/408910913)
 * [Circles Make Spirals](https://vimeo.com/408627938)
+
+Simple gifs on Twitter: [Link](https://twitter.com/RemyPorter/status/1251267693111582720)

@@ -11,9 +11,9 @@ void setup() {
   sim = builder(5, 3, 1)
     .rule(new RuleStep() {
       public float f(float x, float y, PhaseField field) {
-        return x;
+        return x - field.dc(x,y);
       }
-    }, 0.5)
+    }, 0.4)
     .sinWeight(0.25)
     .build();
 }
@@ -27,7 +27,7 @@ void draw() {
     fx.render()
     .bloom(0.7, 20, 50)
     .compose();
-  //saveFrame("flag/####.tiff");
+  //saveFrame("shockwave/####.tiff");
 }
 
   
