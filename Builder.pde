@@ -50,6 +50,25 @@ public class PathicleBuilder {
     return this;
   }
   
+  public PathicleBuilder noisey(float scale) {
+    return noisey(scale, scale, scale, 1);
+  }
+  
+  public PathicleBuilder noisey(float scale, float weight) {
+    return noisey(scale, scale, scale, weight);
+  }
+  
+  public PathicleBuilder noisey(float scale, float time, float weight) {
+    return noisey(scale, scale, time);
+  }
+  
+  public PathicleBuilder noisey(float xscale, float yscale, float time, float weight) {
+    PhaseRule nr = new NoiseRule(field, xscale, yscale, time);
+    nr.weight = weight;
+    sim.ruleChain.add(nr);
+    return this;
+  }
+  
   public PathicleBuilder weight(WeightRule r) {
     sim.weight = r;
     return this;

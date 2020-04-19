@@ -47,3 +47,17 @@ class QuarteroidRule extends PhaseRule {
     return x/field.pixelW*y*1.89;
   }
 }
+
+class NoiseRule extends PhaseRule {
+  float xscale; float yscale; float tscale;
+  public NoiseRule(PhaseField field, float xscale, float yscale, float tscale) {
+    super(field);
+    this.xscale = xscale;
+    this.yscale = yscale;
+    this.tscale = tscale;
+  }
+  
+  protected float calcOffsetForPoint(float x, float y) {
+    return noise(x*xscale, y*yscale, t() * tscale);
+  }
+}
